@@ -20,3 +20,8 @@ El objetivo principal de este proyecto es ofrecer a los gamers una plataforma se
 ## 3. Tecnologías 
 <a name="base_datos"></a>
 ### 3.1. Motor de base de datos
+Como motor para la base de datos empleare `MariaDB`. Las razones son estas:
+- Es el motor que más he usado este año.
+- Su adquisición es gratuita
+- Es multiplataforma
+- Es escalable
