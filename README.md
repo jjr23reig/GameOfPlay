@@ -4,7 +4,8 @@
 - [2. Objetivo](#objetivo) 
 - [3. Tecnologías](#tecnologías)
   - [3.1. Motor de base de datos](#base_datos)
-  - [3.2. Lenguajes y freamworks](#lenguajes)        
+  - [3.2. Lenguajes y freamworks](#lenguajes)
+- [4. Diseño de la aplicación](#diseño)        
 <a name="introduccion"></a>						     		
 ## 1. Introducción 	
 Este proyecto consiste en el desarrollo de una aplicación web destinada a la comunidad gamer, el cual consistira en una tienda virtual donde los usuarios puedan comprar sus juegos de manera legal. La aplicación constara de varias interfaces principales, cuyo aspecto y funcionalidad dependerán del rol del usuario. 
@@ -28,3 +29,6 @@ Como motor para la base de datos empleare `MariaDB`. Las razones son estas:
 - Es escalable
 <a name="lenguajes"></a>
 ### 3.2. Lenguajes y freamworks
+Principalmente la aplicación se desarrollara en su mayor parte en el lenguaje de servidor `PHP`, por lo que empleare el framework de código abierto `Laravel`. Por otro lado la aplicación contara con partes realizadas en `JavaScript`, usando en este caso como framework `Vue.js`.
+<a name="diseño"></a>
+## 4. Diseño de la aplicación
