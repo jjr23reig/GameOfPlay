@@ -19,4 +19,4 @@ El objetivo principal de este proyecto es ofrecer a los gamers una plataforma se
 <a name="tecnologías"></a>			
 ## 3. Tecnologías 
 <a name="base_datos"></a>
-# 3.1. Motor de base de datos
+### 3.1. Motor de base de datos
