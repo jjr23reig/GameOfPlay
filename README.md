@@ -1,3 +1,4 @@
+![Untitled Document (2)](https://user-images.githubusercontent.com/56919754/113034088-003a3700-9192-11eb-8917-0b89be3787e8.png)
 # GameOfPlay
 ## Índice
 - [1. Introducción](#introduccion) 
