@@ -32,6 +32,7 @@ Como motor para la base de datos empleare `MariaDB`. Las razones son estas:
 Principalmente la aplicación se desarrollara en su mayor parte en el lenguaje de servidor `PHP`, por lo que empleare el framework de código abierto `Laravel`. Por otro lado la aplicación contara con partes realizadas en `JavaScript`, usando en este caso como framework `Vue.js`.
 <a name="diseño"></a>
 ## 4. Diseño de la aplicación
-![image](https://user-images.githubusercontent.com/56919754/113031886-83a65900-918f-11eb-93a9-34b8a5a4c722.png)
+![Untitled Document](https://user-images.githubusercontent.com/56919754/113032035-ad5f8000-918f-11eb-9a39-750bd1ab46cb.png)
+
 
 
