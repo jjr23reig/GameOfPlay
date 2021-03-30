@@ -26,5 +26,5 @@ Como motor para la base de datos empleare `MariaDB`. Las razones son estas:
 - Su adquisición es gratuita
 - Es multiplataforma
 - Es escalable
-<a name="base_datos"></a>
+<a name="lenguajes"></a>
 ### 3.2. Lenguajes y freamworks
