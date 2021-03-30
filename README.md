@@ -2,7 +2,8 @@
 ## Índice
 - [1. Introducción](#introduccion) 
 - [2. Objetivo](#objetivo) 
-- [3. Tecnologías](#tecnologías) 
+- [3. Tecnologías](#tecnologías)
+  - [3.1. Motor de bases de datos](#bases_datos)    
 <a name="introduccion"></a>						     		
 ## 1. Introducción 	
 Este proyecto consiste en el desarrollo de una aplicación web destinada a la comunidad gamer, el cual consistira en una tienda virtual donde los usuarios puedan comprar sus juegos de manera legal. La aplicación constara de varias interfaces principales, cuyo aspecto y funcionalidad dependerán del rol del usuario. 
