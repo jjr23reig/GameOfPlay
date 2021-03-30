@@ -2,6 +2,7 @@
 ## Índice
 - [1. Introducción](#introduccion) 
 - [2. Objetivo](#objetivo) 
+- [3. Tecnologías](#tecnologías) 
 <a name="introduccion"></a>						     		
 ## 1. Introducción 	
 Este proyecto consiste en el desarrollo de una aplicación web destinada a la comunidad gamer, el cual consistira en una tienda virtual donde los usuarios puedan comprar sus juegos de manera legal. La aplicación constara de varias interfaces principales, cuyo aspecto y funcionalidad dependerán del rol del usuario. 
@@ -12,4 +13,7 @@ Este proyecto consiste en el desarrollo de una aplicación web destinada a la co
 
 <a name="objetivo"></a>						     		
 ## 2. Objetivo 
-El objetivo principal de este proyecto es ofrecer a los gamer una plataforma segura en donde poder jugar con otra gente, sin que tengan que pagar precios abusivos como en otras plataformas, haciendo una sana competencia a otras tiendas como steam o epic games. 
+El objetivo principal de este proyecto es ofrecer a los gamers una plataforma segura en donde poder jugar con otra gente, sin que tengan que pagar precios abusivos como en otras plataformas, haciendo una sana competencia a otras tiendas como steam o epic games.
+
+<a name="tecnologías"></a>			
+## 3. Tecnologías 
