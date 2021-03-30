@@ -36,7 +36,8 @@ Principalmente la aplicación se desarrollara en su mayor parte en el lenguaje d
 ## 4. Diseño de la aplicación
 <a name="dc"></a>
 ### 4.1 Diseño de compra
-![Untitled Document](https://user-images.githubusercontent.com/56919754/113032035-ad5f8000-918f-11eb-9a39-750bd1ab46cb.png)
+![Untitled Document (1)](https://user-images.githubusercontent.com/56919754/113032770-80f83380-9190-11eb-9e4a-6b12e8544e54.png)
+
 <a name="dac"></a>
 ### 4.2 Diseño de amistad y chat
 
