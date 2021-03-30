@@ -5,7 +5,9 @@
 - [3. Tecnologías](#tecnologías)
   - [3.1. Motor de base de datos](#base_datos)
   - [3.2. Lenguajes y freamworks](#lenguajes)
-- [4. Diseño de la aplicación](#diseño)        
+- [4. Diseño de la aplicación](#diseño)
+  - [4.1. Diseño de compra](#dc)
+  - [4.2. Diseño de amistad y chat](#dac)        
 <a name="introduccion"></a>						     		
 ## 1. Introducción 	
 Este proyecto consiste en el desarrollo de una aplicación web destinada a la comunidad gamer, el cual consistira en una tienda virtual donde los usuarios puedan comprar sus juegos de manera legal. La aplicación constara de varias interfaces principales, cuyo aspecto y funcionalidad dependerán del rol del usuario. 
@@ -32,7 +34,11 @@ Como motor para la base de datos empleare `MariaDB`. Las razones son estas:
 Principalmente la aplicación se desarrollara en su mayor parte en el lenguaje de servidor `PHP`, por lo que empleare el framework de código abierto `Laravel`. Por otro lado la aplicación contara con partes realizadas en `JavaScript`, usando en este caso como framework `Vue.js`.
 <a name="diseño"></a>
 ## 4. Diseño de la aplicación
+<a name="dc"></a>
+### 4.1 Diseño de compra
 ![Untitled Document](https://user-images.githubusercontent.com/56919754/113032035-ad5f8000-918f-11eb-9a39-750bd1ab46cb.png)
+<a name="dac"></a>
+### 4.2 Diseño de amistad y chat
 
 
 
