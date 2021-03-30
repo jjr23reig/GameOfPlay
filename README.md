@@ -1,4 +1,3 @@
-![Untitled Document (2)](https://user-images.githubusercontent.com/56919754/113034088-003a3700-9192-11eb-8917-0b89be3787e8.png)
 # GameOfPlay
 ## Índice
 - [1. Introducción](#introduccion) 
@@ -41,6 +40,6 @@ Principalmente la aplicación se desarrollara en su mayor parte en el lenguaje d
 
 <a name="dac"></a>
 ### 4.2 Diseño de amistad y chat
-
+![Untitled Document (2)](https://user-images.githubusercontent.com/56919754/113034088-003a3700-9192-11eb-8917-0b89be3787e8.png)
 
 
