@@ -7,7 +7,8 @@
   - [3.2. Lenguajes y freamworks](#lenguajes)
 - [4. Diseño de la aplicación](#diseño)
   - [4.1. Diseño de compra](#dc)
-  - [4.2. Diseño de amistad y chat](#dac)        
+  - [4.2. Diseño de amistad y chat](#dac)
+ - [5 Usuarios](#usu)        
 <a name="introduccion"></a>						     		
 ## 1. Introducción 	
 Este proyecto consiste en el desarrollo de una aplicación web destinada a la comunidad gamer, el cual consistira en una tienda virtual donde los usuarios puedan comprar sus juegos de manera legal. La aplicación constara de varias interfaces principales, cuyo aspecto y funcionalidad dependerán del rol del usuario. 
@@ -41,5 +42,9 @@ Principalmente la aplicación se desarrollara en su mayor parte en el lenguaje d
 <a name="dac"></a>
 ### 4.2 Diseño de amistad y chat
 ![Untitled Document (2)](https://user-images.githubusercontent.com/56919754/113034088-003a3700-9192-11eb-8917-0b89be3787e8.png)
+
+<a name="usu"></a>
+## 5 Usuarios
+
 
 
