@@ -53,6 +53,7 @@ Principalmente la aplicación se desarrollara en su mayor parte en el lenguaje d
 Como se ha detallado antes, el `usuario anónimo` sera todo aquella persona que no este logeada, y por tanto no estara registrada en la base de datos de usuarios.
 Dicho esto, los `usuarios anónimos` podran navegar por la tienda, ver los juegos que hay publicados, ver las noticias y ofertas de la tienda, pero al no estar logeados no podrán realizar ninguna compra, ni podran usar cualquier otro servicio de esta como puede ser el soporte tecnico o el chat imcorporado para los `usuarios registrados` de la misma.
 
-
+<a name="usureg"></a>
+### 5.2 Usuarios Registrado
 
 
