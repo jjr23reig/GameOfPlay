@@ -8,7 +8,10 @@
 - [4. Diseño de la aplicación](#diseño)
   - [4.1. Diseño de compra](#dc)
   - [4.2. Diseño de amistad y chat](#dac)
- - [5 Usuarios](#usu)        
+ - [5 Usuarios](#usu)
+   - [5.1 Usuarios Anónimos](#usua)
+   - [5.2 Usuarios Registrados](#usureg)
+   - [5.3 Administrador](#admin)        
 <a name="introduccion"></a>						     		
 ## 1. Introducción 	
 Este proyecto consiste en el desarrollo de una aplicación web destinada a la comunidad gamer, el cual consistira en una tienda virtual donde los usuarios puedan comprar sus juegos de manera legal. La aplicación constara de varias interfaces principales, cuyo aspecto y funcionalidad dependerán del rol del usuario. 
