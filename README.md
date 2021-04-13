@@ -55,5 +55,12 @@ Dicho esto, los `usuarios anónimos` podran navegar por la tienda, ver los juego
 
 <a name="usureg"></a>
 ### 5.2 Usuarios Registrado
+Se determinara para esta como `usuario registrado` a cualquier usuario que este registrado dentro de la base de datos de la aplicación, y a su vez logeado dentro de la misma. Este usuario a diferencia del `usuario anónimo` podra realizar compras dentro de la tienda, además de poder emplear los diferentes servicios de la misma, como pueden ser el chat de amigos o el soporte.
+
+<a name="admin"></a>
+### 5.3 Administrador
+El rol de administrador sera para los usuarios a cargo de la aplicación, puestos por la empresa y sin pasar por un sistema de registro, ya que serian cuentas dadas por la empresa de la aplicación. Dichas personas, se encargarían de actualizar el tablón de noticias de la aplicación y gestionar el soporte técnico de aplicación.
+
+
 
 
