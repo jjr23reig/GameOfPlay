@@ -33373,6 +33373,30 @@ select {
   --tw-backdrop-sepia: sepia(100%);
 }
 
+body {
+  color: #f4f4f4;
+  background-color: #181818;
+  overflow-x: hidden;
+}
+
+/* Scrollbar styles */
+
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #6649b8;
+}
+
+p:first-letter, span:first-letter {
+  text-transform: uppercase;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -195652,4 +195676,3 @@ select {
     --tw-backdrop-sepia: sepia(100%);
   }
 }
-

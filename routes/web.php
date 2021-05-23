@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\storeController;
+use App\Models\News;
+use App\User;
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -22,8 +26,29 @@ Route::get('/', function () {
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
-});
+})->name('games');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [storeController::class,'index'])->name('dashboard');
+
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/games/{id}', [storeController::class,'showGame'])->name('gamepage');
+
+Route::middleware(['auth:sanctum', 'verified'])->post('cart/add', [storeController::class, 'addCart'])->name('addcart');
+Route::middleware(['auth:sanctum', 'verified'])->get('cart/delete/{id}', [storeController::class, 'deleteCart'])->name('deletecart');
+Route::middleware(['auth:sanctum', 'verified'])->get('/cart/{id}', [storeController::class, 'showCart'])->name('cart');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/payments/{id}', [storeController::class, 'showPay'])->name('payment');
+Route::middleware(['auth:sanctum', 'verified'])->get('/card/{id}', [storeController::class, 'cardInsert'])->name('cardbrand');
+Route::middleware(['auth:sanctum', 'verified'])->get('/card-save', [storeController::class, 'cardSave'])->name('cardsave');
+
+
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/news', function () {
+    return Inertia::render('News',[
+        'news' => News::all()
+    ]);
+})->name('news');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/support', function () {
+    return Inertia::render('Support');
+})->name('support');

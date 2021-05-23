@@ -49,7 +49,7 @@
             </div>
             <!-- Surame -->
             <div class="col-span-6 sm:col-span-4">
-                <jet-label for="surname" value="Surname" />
+                <jet-label for="surname" value="Surnames" />
                 <jet-input id="surname" type="text" class="mt-1 block w-full" v-model="form.surname" autocomplete="surname" />
                 <jet-input-error :message="form.errors.surname" class="mt-2" />
             </div>

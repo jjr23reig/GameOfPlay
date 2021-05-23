@@ -16,8 +16,16 @@
         <!-- Scripts -->
         @routes
         <script src="{{ mix('js/app.js') }}" defer></script>
+        <script src="https://kit.fontawesome.com/2dcb62c270.js" crossorigin="anonymous"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <script src="https://js.stripe.com/v3/"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
     </head>
     <body class="font-sans antialiased">
         @inertia
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     </body>
+
+    
+
 </html>
