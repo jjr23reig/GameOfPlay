@@ -32,14 +32,14 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [storeControl
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/games/{id}', [storeController::class,'showGame'])->name('gamepage');
+Route::middleware(['auth:sanctum', 'verified'])->get('/users/{id}', [storeController::class,'showUser'])->name('userpage');
 
 Route::middleware(['auth:sanctum', 'verified'])->post('cart/add', [storeController::class, 'addCart'])->name('addcart');
 Route::middleware(['auth:sanctum', 'verified'])->get('cart/delete/{id}', [storeController::class, 'deleteCart'])->name('deletecart');
 Route::middleware(['auth:sanctum', 'verified'])->get('/cart/{id}', [storeController::class, 'showCart'])->name('cart');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/payments/{id}', [storeController::class, 'showPay'])->name('payment');
-Route::middleware(['auth:sanctum', 'verified'])->get('/card/{id}', [storeController::class, 'cardInsert'])->name('cardbrand');
-Route::middleware(['auth:sanctum', 'verified'])->get('/card-save', [storeController::class, 'cardSave'])->name('cardsave');
+
 
 
 

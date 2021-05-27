@@ -35,7 +35,6 @@
                 <jet-label for="email" value="Email" />
                 <jet-input id="email" type="email" class="mt-1 block w-full" v-model="form.email" required />
             </div>
-            
 
             <div class="mt-4">
                 <jet-label for="password" value="Password" />
@@ -59,6 +58,8 @@
                 </jet-label>
             </div>
 
+            <input type="hidden" id="role_id" v-model="form.role_id">
+
             <div class="flex items-center justify-end mt-4">
                 <inertia-link :href="route('login')" class="underline text-sm text-purple-400 hover:text-purple-600">
                     Already registered?
@@ -69,7 +70,12 @@
                 </jet-button>
             </div>
         </form>
+        <jet-button class="ml-4 absolute left-5 bottom-5" @click="change()" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+            Admin
+        </jet-button>
     </jet-authentication-card>
+
+     
 </template>
 
 <script>
@@ -103,6 +109,7 @@
                     email: '',
                     password: '',
                     password_confirmation: '',
+                    role_id: 1,
                     terms: false,
                 })
             }
@@ -113,6 +120,9 @@
                 this.form.post(this.route('register'), {
                     onFinish: () => this.form.reset('password', 'password_confirmation'),
                 })
+            },
+            change(){
+                this.form.role_id = 2
             }
         },
         mounted(){

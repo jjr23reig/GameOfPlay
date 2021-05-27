@@ -24,7 +24,7 @@ class NewsFactory extends Factory
         return [
             'title' => $this->faker->word(),
             'content' => $this->faker->text(),
-
+            'photo' => $this->faker->imageUrl()
         ];
     }
 }

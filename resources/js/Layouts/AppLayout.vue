@@ -10,7 +10,7 @@
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16">
-                        <div class="flex">
+                        <div class="flex" >
                             <!-- Logo -->
                             <div class="flex-shrink-0 flex items-center">
                                 <inertia-link :href="route('dashboard')">
@@ -18,22 +18,31 @@
                                 </inertia-link>
                             </div>
 
-                            <!-- Navigation Links -->
-                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <div class="flex" v-if="$page.props.user.role_id == 1">
+                                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <jet-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
                                     Store
                                 </jet-nav-link>
+                                </div>
+                                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                    <jet-nav-link :href="route('news')" :active="route().current('news')">
+                                        News
+                                    </jet-nav-link>
+                                </div>
+                                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                    <jet-nav-link :href="route('support')" :active="route().current('support')">
+                                        Support
+                                    </jet-nav-link>
+                                </div>
                             </div>
-                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <jet-nav-link :href="route('news')" :active="route().current('news')">
-                                    News
-                                </jet-nav-link>
+                            <div class="flex" v-if="$page.props.user.role_id == 2">
+                                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                    <jet-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
+                                        User List
+                                    </jet-nav-link>
+                                </div>
                             </div>
-                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <jet-nav-link :href="route('support')" :active="route().current('support')">
-                                    Support
-                                </jet-nav-link>
-                            </div>
+                            
                         </div>
 
                         <div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -93,14 +102,14 @@
                             </div>
 
                             <!-- Settings Dropdown -->
-                            <inertia-link :href="route('cart',$page.props.user.id)" >
+                            <inertia-link :href="route('cart',$page.props.user.id)" v-if="$page.props.user.role_id == 1">
                                 <div style="width:10px" class="mt-1 mr-10 relative ">
                                     <svg width="50px" height="50px" class="absolute -bottom-9 ">
                                         <g id="surface1">
                                             <path style=" stroke:1px black;fill-rule:nonzero;fill:rgb(249, 250, 251);fill-opacity:1;" d="M 39.382812 11.757812 C 38.910156 11.050781 37.726562 10.339844 36.78125 10.339844 L 6.242188 8.207031 L 5.058594 4.421875 C 5.058594 4.183594 4.824219 3.710938 4.351562 3.710938 L 1.507812 2.765625 C 1.035156 2.527344 0.324219 2.765625 0.0898438 3.472656 C -0.148438 3.949219 0.0898438 4.65625 0.796875 4.894531 L 3.164062 5.605469 L 4.351562 9.628906 L 9.085938 25.960938 C 9.421875 27.199219 10.140625 28.214844 11.074219 28.949219 C 10.011719 29.820312 9.320312 31.121094 9.320312 32.589844 C 9.320312 35.195312 11.449219 37.324219 14.054688 37.324219 C 16.65625 37.324219 18.785156 35.195312 18.785156 32.589844 C 18.785156 31.726562 18.535156 30.925781 18.125 30.222656 L 27.261719 30.222656 C 26.851562 30.925781 26.601562 31.726562 26.601562 32.589844 C 26.601562 35.195312 28.730469 37.324219 31.335938 37.324219 C 33.941406 37.324219 36.070312 35.195312 36.070312 32.589844 C 36.070312 31.316406 35.554688 30.15625 34.726562 29.300781 C 35.886719 28.5625 36.753906 27.417969 37.019531 25.960938 L 39.859375 14.835938 C 40.09375 13.652344 40.09375 12.707031 39.382812 11.757812 Z M 14.054688 34.957031 C 12.632812 34.957031 11.6875 34.011719 11.6875 32.589844 C 11.6875 31.171875 12.632812 30.222656 14.054688 30.222656 C 15.238281 30.222656 16.421875 31.171875 16.421875 32.589844 C 16.421875 34.011719 15.472656 34.957031 14.054688 34.957031 Z M 31.332031 34.957031 C 29.914062 34.957031 28.964844 34.011719 28.964844 32.589844 C 28.964844 31.171875 29.914062 30.222656 31.332031 30.222656 C 32.757812 30.222656 33.699219 31.171875 33.699219 32.589844 C 33.699219 34.011719 32.753906 34.957031 31.332031 34.957031 Z M 34.882812 25.488281 C 34.683594 26.6875 33.628906 27.667969 32.316406 27.960938 C 32 27.894531 31.671875 27.855469 31.332031 27.855469 C 30.84375 27.855469 30.378906 27.953125 29.933594 28.09375 L 15.453125 28.09375 C 15.007812 27.953125 14.542969 27.855469 14.054688 27.855469 C 13.941406 27.855469 13.835938 27.882812 13.730469 27.890625 C 12.703125 27.492188 11.804688 26.5625 11.445312 25.488281 L 7.1875 10.8125 L 36.539062 12.941406 C 37.011719 12.941406 37.25 13.179688 37.484375 13.417969 C 37.722656 13.652344 37.722656 14.125 37.722656 14.363281 Z M 34.882812 25.488281 "/>
                                         </g>
                                     </svg>
-                                    <span class="text-gray-100 absolute bottom-1 left-3">10</span>
+                                    
                                 </div>
                             </inertia-link>
 
@@ -165,7 +174,7 @@
 
                 <!-- Responsive Navigation Menu -->
                 <div :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown}" class="sm:hidden">
-                    <div class="pt-2 pb-3 space-y-1">
+                    <div class="pt-2 pb-3 space-y-1" v-if="$page.props.user.role_id == 1">
                         <jet-responsive-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
                             Store
                         </jet-responsive-nav-link>
@@ -194,7 +203,7 @@
                             <jet-responsive-nav-link :href="route('profile.show')" :active="route().current('profile.show')">
                                 Profile
                             </jet-responsive-nav-link>
-                            <jet-responsive-nav-link :href="route('cart', $page.props.user.id)" :active="route().current('cart')">
+                            <jet-responsive-nav-link :href="route('cart', $page.props.user.id)" :active="route().current('cart')" v-if="$page.props.user.role_id == 1">
                                 Your Cart
                             </jet-responsive-nav-link>
 

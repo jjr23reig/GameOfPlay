@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Game;
 use App\Models\Cart;
-use App\Models\Line;
+use App\Models\Purchase;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -19,7 +19,9 @@ class storeController extends Controller
     public function index(){
         
         return Inertia::render('Dashboard', [
-            'games' => Game::all()
+            'games' => Game::all(),
+            'users' => User::where('role_id',1)->get()
+
         ]);
     }
     public function showGame($id){
@@ -27,6 +29,23 @@ class storeController extends Controller
         return Inertia::render('Game', [
             'game' => $game
         ]);
+    }
+    public function showUser($id){
+        $user = User::find($id);
+
+        $products = DB::table('purchase_products as pp')
+                                ->rightjoin('games as g', 'pp.game_id', '=', 'g.id')
+                                ->leftjoin('purchases as p', 'pp.purchase_id', '=', 'p.id')
+                                ->select('g.name','g.gender','g.description','g.photo')
+                                ->where('p.user_id', $id)
+                                ->get();
+
+        
+        return Inertia::render('Userpage', [
+            'client' => $user,
+            'games' => $products
+        ]);
+        
     }
 
     public function addCart(Request $request){
@@ -103,7 +122,7 @@ class storeController extends Controller
     }
 
     public function showPay($id){
-
+        
         $user= User::find($id);
         $cart=Cart::where('user_id',$id)->first();
         $idcart= $cart->id;
@@ -111,7 +130,7 @@ class storeController extends Controller
 
         $products=DB::table('games as g')
             ->rightJoin('product_carts as pc', 'g.id', '=', 'pc.game_id')
-            ->select('g.name','g.price','g.description','g.photo as image')
+            ->select('g.id','g.name','g.price','g.description','g.photo as image')
             ->where('pc.cart_id',$idcart)
             ->orderBy('pc.id')
             ->get();
@@ -119,11 +138,7 @@ class storeController extends Controller
         $stripe = new \Stripe\StripeClient(
             'sk_test_51IsOF3Gkh4ZqxVWi7ftRpVx7FbdklYG6EpI4XnwcFtH7RdqOJdeONTSPIYJPuAvRTBKM01b4weJhdUuIJ9dYdptT00WoUbA8b6'
         );
-        if($user->card_brand == null){
-            var_dump('no tiene tarjeta');
-            return Redirect::route('cardbrand',$id);
-            die();
-        }
+        
         foreach ($products as &$valor) {
             $total = $total + $valor->price;
         }
@@ -145,17 +160,25 @@ class storeController extends Controller
             'mode' => 'payment',
           ]);
 
+         
+        
+        $purchase = new Purchase();
+        $purchase->user_id = $id;
+        $purchase->save();
+
+        foreach ($products as &$valor) {
+            $total = $total + $valor->id;
+            DB::table('purchase_products')->insert(['purchase_id'=>$purchase->id, 'game_id'=>$valor->id]);
+        }
+        
+        
+        Cart::where('user_id',$id)->delete();
+
         return Redirect::route('dashboard');
         
     }
 
-    public function cardInsert($id){
- 
-        $user= User::find($id);
-        return Inertia::render('Card',[
-            'intent' => $user->createSetupIntent()
-        ]);
-    }
+    
     
 
     
