@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Game;
 use App\Models\Cart;
+use App\Models\Faq;
 use App\Models\Purchase;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
@@ -30,6 +32,19 @@ class storeController extends Controller
             'game' => $game
         ]);
     }
+    public function library(){
+        $user = Auth::user();
+        $games = DB::table('purchase_products as pp')
+                                ->rightjoin('games as g', 'pp.game_id', '=', 'g.id')
+                                ->leftjoin('purchases as p', 'pp.purchase_id', '=', 'p.id')
+                                ->select('g.name','g.gender','g.description','g.photo')
+                                ->where('p.user_id', $user->id)
+                                ->get();
+       
+        return Inertia::render('Library', [
+            'games'=>$games
+        ]);
+    }
     public function showUser($id){
         $user = User::find($id);
 
@@ -44,6 +59,58 @@ class storeController extends Controller
         return Inertia::render('Userpage', [
             'client' => $user,
             'games' => $products
+        ]);
+        
+    }
+
+    public function chatWithUser($id){
+        $user = User::find($id);
+        $faqs = Faq::where('user_id', $user->id)->get();
+       
+        return Inertia::render('Faqs',[
+            'faqs' => $faqs,
+            'client' => $user
+        ]);
+    }
+
+    public function support(){
+        $user = Auth::user();
+        $faqs = Faq::where('user_id', $user->id)->get();
+        
+        return Inertia::render('Support',[
+            'faqs' => $faqs
+        ]);
+    }
+    public function addFaq(Request $request){
+
+        $user = Auth::user();
+        var_dump($user->role_id);
+
+        if($user->role_id == 1){
+            $faq = new Faq();
+            $faq->user_id = $user->id;
+            $faq->ask = $request->faq;
+            $faq->save();
+
+            return Redirect::route('support');
+        }
+        else{
+            
+            $faq = Faq::find($request->id);
+            $faq->answer = $request->faq;
+            $faq->save();
+            
+            
+            return Redirect::route('userchat',$faq->user_id);
+        }
+        
+    }
+
+    public function respondFaq($id){
+        $faq = Faq::find($id);
+
+        return Inertia::render('Respond', [
+            'faq' => $faq
         ]);
         
     }

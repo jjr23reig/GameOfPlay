@@ -7,11 +7,11 @@
         </template>
 
        <div class="py-10">
-            <div class="max-w-7xl mx-auto flex flex-row flex-wrap">
+            <div class="max-w-7xl mx-auto flex flex-row flex-wrap justify-between">
                 <div v-for="newsl in news" :key="newsl.id" >
-                        <div style="min-width: 300px max-width: 300px" class=" bg-gray-900 sm:rounded-xl p-0 mb-8  flex flex-col p-5 items-center  ml-9 ">
+                        <div  class=" w-96 bg-gray-900 sm:rounded-xl p-0 mb-8  flex flex-col p-5 items-center mr-9">
                             <span class=" text-purple-500 text-4xl">{{newsl.title}}</span>
-                            <span style=" max-width: 200px" class=" ">{{newsl.content}}</span>
+                            <span style=" max-width: 300px" class="text-justify mt-2">{{newsl.content}}</span>
                         </div>
                 </div>
             </div>

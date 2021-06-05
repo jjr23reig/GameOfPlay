@@ -7,9 +7,9 @@
         </template>
 
         <div class="py-12">
-            <div class="max-w-8xl mx-auto sm:px-6 lg:px-8 flex sm:flex-row flex-col">
+            <div class="max-w-8xl mx-auto sm:px-6 lg:px-8 flex sm:flex-row flex-col ">
                 <card-user :user="client" ></card-user>
-                <card-buy :games="games" ></card-buy>
+                <card-buy :games="games"  ></card-buy>
             </div>
         </div>
     </app-layout>

@@ -141,6 +141,10 @@
                                             Profile
                                         </jet-dropdown-link>
 
+                                        <jet-dropdown-link :href="route('library')">
+                                            Library
+                                        </jet-dropdown-link>
+
                                         <jet-dropdown-link :href="route('api-tokens.index')" v-if="$page.props.jetstream.hasApiFeatures">
                                             API Tokens
                                         </jet-dropdown-link>
@@ -202,6 +206,9 @@
                         <div class="mt-3 space-y-1">
                             <jet-responsive-nav-link :href="route('profile.show')" :active="route().current('profile.show')">
                                 Profile
+                            </jet-responsive-nav-link>
+                            <jet-responsive-nav-link :href="route('library')" :active="route().current('library')">
+                                Library
                             </jet-responsive-nav-link>
                             <jet-responsive-nav-link :href="route('cart', $page.props.user.id)" :active="route().current('cart')" v-if="$page.props.user.role_id == 1">
                                 Your Cart

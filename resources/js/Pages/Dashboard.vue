@@ -34,14 +34,14 @@
                             <th>Surname</th>
                             <th>Nickname</th>
                             <th class="sm:table-cell hidden">Email</th>
-                            <th>Telephone</th>
+                            <th class="sm:table-cell hidden">Telephone</th>
                         </tr>
                         <tr v-for="user in users" :key="user.id" class="bg-gray-700 h-20">
                             <td class="text-center">{{user.name}}</td>
                             <td class="text-center">{{user.surname}}</td>
                             <td class="text-center">{{user.nick}}</td>
                             <td class="text-center sm:table-cell hidden">{{user.email}}</td>
-                            <td class="text-center">{{user.telephone}}</td>
+                            <td class="text-center sm:table-cell hidden">{{user.telephone}}</td>
                             <td class="text-center">
                                 <inertia-link :href="route('userpage', user.id)">
                                     <jet-view-button>Datos</jet-view-button>

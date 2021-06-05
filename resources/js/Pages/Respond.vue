@@ -8,16 +8,14 @@
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-gray-900 overflow-hidden shadow-xl sm:rounded-lg flex flex-col justify-end " style="height:730px">
+                <div class="bg-gray-900 overflow-hidden shadow-xl sm:rounded-lg flex flex-col justify-end">
                     <div class="overflow-y-scroll">
-                        <div v-for="faq in faqs" :key="faq.id" class="p-5 mb-2 ">
+                        <div class="p-5">
                             <p>Pregunta: {{faq.ask}}</p>
-                            <p>Respuesta: {{faq.answer}}</p>
                         </div>
                     </div>
                     <form @submit.prevent="submit" class="w-full p-2 bg-gray-700 ">
                         <div>
-                            <label for="text">Insert your question:</label>
                             <input type="text" id="faq" v-model="form.faq" class="w-full">
                         </div>
                     </form>
@@ -32,7 +30,7 @@
     import Welcome from '@/Jetstream/Welcome'
 
     export default {
-        props:['faqs'],
+        props:['faq'],
         components: {
             AppLayout,
             Welcome,
@@ -40,8 +38,8 @@
         data(){
             return{
                 form: this.$inertia.form({
-                     faq: ''
-                     
+                     faq: '',
+                     id: this.faq.id
                 })
             }
         },

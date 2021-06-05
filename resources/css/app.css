@@ -8,17 +8,25 @@ body {
   }
   
   /* Scrollbar styles */
-  body::-webkit-scrollbar {
+  *::-webkit-scrollbar {
     width: 0.25rem;
   }
   
-  body::-webkit-scrollbar-track {
+  *::-webkit-scrollbar-track {
     background: #1e1e24;
   }
   
-  body::-webkit-scrollbar-thumb {
+  *::-webkit-scrollbar-thumb {
     background: #6649b8;
   }
   p:first-letter, span:first-letter {
     text-transform: uppercase;
+  }
+  #faq{
+    background-color: transparent;
+    border:none;
+    border-bottom: 1px solid gray;
+  }
+  #faq:focus{
+    box-shadow: 0 0 #0000;
   }

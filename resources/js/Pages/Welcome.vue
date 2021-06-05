@@ -1,128 +1,49 @@
 <template>
-    <div>
-        <jet-banner />
-
-        <div class="min-h-screen bg-gray-800">
-            <nav class="bg-gray-900 border-b border-gray-700 ">
-                <!-- Primary Navigation Menu -->
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="flex justify-between h-16">
-                        <div class="flex">
-                            <!-- Logo -->
-                            <div class="flex-shrink-0 flex items-center">
-                                    <jet-application-mark class="block h-9 w-auto" />
-                            </div>
-
-                            <!-- Navigation Links -->
-                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex ">
-                                <jet-nav-link :href="route('games')" :active="route().current('games')" class="text-gray-100">
-                                    Games
-                                </jet-nav-link>
-                            </div>
-                        </div>
-
-                        <div class="relative flex items-top justify-center min-h-screen sm:items-center sm:pt-0 text-gray-100">
-                            <div v-if="canLogin" class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                                <inertia-link v-if="$page.props.user" href="/dashboard" class="text-lg text-purple-500 font-black">
-                                    {{ $page.props.user.nick }}
-                                </inertia-link>
-
-                                <template v-else>
-                                    <inertia-link :href="route('login')" class="text-lg text-purple-500 font-black">
-                                        Log in
-                                    </inertia-link>
-
-                                    <inertia-link v-if="canRegister" :href="route('register')" class="ml-4 text-lg text-purple-500 font-black">
-                                        Register
-                                    </inertia-link>
-                                </template>
-                            </div>
-                        </div>
-
-                        
-
-                        <!-- Hamburger -->
-                        <div class="-mr-2 flex items-center sm:hidden">
-                            <button @click="showingNavigationDropdown = ! showingNavigationDropdown" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-100 hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-gray-100 transition">
-                                <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                                    <path :class="{'hidden': showingNavigationDropdown, 'inline-flex': ! showingNavigationDropdown }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                                    <path :class="{'hidden': ! showingNavigationDropdown, 'inline-flex': showingNavigationDropdown }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            </button>
+    <nav-layout>
+         <template #header>
+            <h2 class="font-semibold text-xl text-purple-500 leading-tight">
+                Store
+            </h2>
+        </template>
+        <div class="py-10">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div class=" overflow-hidden sm:rounded-lg ">
+                    <div v-for="game in $page.props.games" :key="game.id" class="bg-gray-900 sm:rounded-xl p-0 mb-8 sm:h-60 h-40 flex flex-row" >
+                        <img v-bind:src="game.photo" alt=""  class="sm:rounded-xl sm:h-60 h-40">
+                        <div class="w-full relative rounded-sm flex flex-col text-gray-100 sm:p-5 p-2">
+                            <span>{{game.name}}</span>
+                            <span class="mb-4">{{game.gender}}</span>
+                            <span class="lg:block hidden">{{game.description}}</span>
+                            <span class="absolute bottom-3 -left-10 text-white  text-2xl font-bold" style="text-stroke: 1px black">{{game.age}}</span>
+                            <inertia-link :href="route('gamepage', game.id)">
+                                <jet-button class="absolute bottom-5 sm:right-10 mr-2 ">{{game.price}}€</jet-button>
+                            </inertia-link>      
                         </div>
                     </div>
-                </div>
-
-
-
-                <!-- Responsive Navigation Menu -->
-                <div :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown}" class="sm:hidden">
-                    <div class="pt-2 pb-3 space-y-1">
-                        <jet-responsive-nav-link :href="route('games')" :active="route().current('games')">
-                            Games
-                        </jet-responsive-nav-link>
-                    </div>
-                    <!-- Responsive Settings Options -->
-                    <div class="pt-4 pb-1 border-t border-gray-200">
-                        <div v-if="canLogin" class="mt-3 space-y-1">
-                            
-                                <jet-responsive-nav-link v-if="$page.props.user" href="/dashboard">
-                                    {{ $page.props.user.nick }}
-                                </jet-responsive-nav-link>
-                                <template v-else>
-                                    <jet-responsive-nav-link :href="route('login')">
-                                        Log in
-                                    </jet-responsive-nav-link>
-                                    <jet-responsive-nav-link v-if="canRegister" :href="route('register')">
-                                        Register
-                                    </jet-responsive-nav-link>
-                                </template>
-                            
-                        </div>
-                    </div>
-                </div>
-            </nav>
-
-            <!-- Page Heading -->
-            <header class="bg-gray-900 shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    <h2 class="font-semibold text-xl text-gray-100 leading-tight">Gameofplay</h2>
-                </div>
-            </header>
-
-            <!-- Page Content -->
-            <main class="bg-red-600">
-                
-            </main>
+                </div>         
+            </div>
         </div>
-    </div>
+    </nav-layout>
 </template>
 
 <script>
-    import JetApplicationMark from '@/Jetstream/ApplicationMark'
-    import JetBanner from '@/Jetstream/Banner'
-    import JetDropdown from '@/Jetstream/Dropdown'
-    import JetDropdownLink from '@/Jetstream/DropdownLink'
-    import JetNavLink from '@/Jetstream/NavLink'
-    import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink'
+    
+    import NavLayout from '@/Layouts/NavLayout'
 
     
 
     export default {
         components: {
-            JetApplicationMark,
-            JetBanner,
-            JetDropdown,
-            JetDropdownLink,
-            JetNavLink,
-            JetResponsiveNavLink,
+            NavLayout
         },
         props: {
             canLogin: Boolean,
             canRegister: Boolean,
             laravelVersion: String,
             phpVersion: String,
+            
         },
+       
 
         data() {
             return {
