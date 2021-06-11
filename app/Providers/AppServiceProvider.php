@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Laravel\Cashier\Cashier;
-use Illuminate\Routing\UrlGenerator;
+//use Illuminate\Routing\UrlGenerator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -16,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         Cashier::ignoreMigrations();
-        if (env("REDIRECT_HTTPS") app()->request->server->set("HTTPS", true) ;
+        //if (env("REDIRECT_HTTPS") app()->request->server->set("HTTPS", true) ;
     }
 
     /**
@@ -26,6 +26,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot (UrlGenerator $url)
     {
-        if (env("REDIRECT_HTTPS") $url->formatScheme("https://") ;
+        //if (env("REDIRECT_HTTPS") $url->formatScheme("https://") ;
     }
 }
