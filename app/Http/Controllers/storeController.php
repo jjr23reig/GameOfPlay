@@ -18,6 +18,10 @@ use Stripe\Stripe;
 
 class storeController extends Controller
 {
+    
+    /**
+     * render games and user at Dashboard
+     */
     public function index(){
         
         return Inertia::render('Dashboard', [
@@ -26,12 +30,22 @@ class storeController extends Controller
 
         ]);
     }
+
+    
+    /**
+     * render a view from the game
+     */
     public function showGame($id){
         $game = Game::find($id);
         return Inertia::render('Game', [
             'game' => $game
         ]);
     }
+
+    
+    /**
+     * show games bought by clients
+     */
     public function library(){
         $user = Auth::user();
         $games = DB::table('purchase_products as pp')
@@ -45,6 +59,11 @@ class storeController extends Controller
             'games'=>$games
         ]);
     }
+
+    
+    /**
+     * show to admin dates from an user and his library
+     */
     public function showUser($id){
         $user = User::find($id);
 
@@ -63,6 +82,10 @@ class storeController extends Controller
         
     }
 
+    
+    /**
+     * create a chat between admin and client
+     */
     public function chatWithUser($id){
         $user = User::find($id);
         $faqs = Faq::where('user_id', $user->id)->get();
@@ -73,6 +96,10 @@ class storeController extends Controller
         ]);
     }
 
+
+    /**
+     * create a chat between client and admin
+     */
     public function support(){
         $user = Auth::user();
         $faqs = Faq::where('user_id', $user->id)->get();
@@ -81,6 +108,12 @@ class storeController extends Controller
             'faqs' => $faqs
         ]);
     }
+
+
+
+    /**
+     * add a question from client
+     */
     public function addFaq(Request $request){
 
         $user = Auth::user();
@@ -106,6 +139,10 @@ class storeController extends Controller
         
     }
 
+    
+    /** 
+     * respond a question from client
+     */
     public function respondFaq($id){
         $faq = Faq::find($id);
 
@@ -115,6 +152,11 @@ class storeController extends Controller
         
     }
 
+   
+    /**
+     * create a cart if this don´t exit 
+     * and add to cart games
+     */
     public function addCart(Request $request){
         $idGame = $request->idGame;
         $idUser = $request->idUser;
@@ -148,6 +190,9 @@ class storeController extends Controller
         
     }
 
+    /**
+     * Render cart from client if this exist
+     */
     public function showCart($id){
         
         $cartExist = false;
@@ -176,6 +221,7 @@ class storeController extends Controller
         ]);
     }
 
+    //Delete a game from cart´s client
     public function deleteCart($id){
         $idCart=DB::table('product_carts')->select('cart_id')->where('id', $id)->get();
         $idCart=$idCart[0]->cart_id;
@@ -188,6 +234,10 @@ class storeController extends Controller
         return Redirect::route('cart',$idUser);
     }
 
+
+    /**
+     * perform a purchase of games
+     */
     public function showPay($id){
         
         $user= User::find($id);
