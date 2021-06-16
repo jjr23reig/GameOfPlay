@@ -62,6 +62,9 @@
                         <jet-responsive-nav-link :href="route('games')" :active="route().current('games')">
                             Games
                         </jet-responsive-nav-link>
+                        <jet-nav-link :href="route('information')" :active="route().current('information')" class="text-gray-100">
+                            News
+                        </jet-nav-link>
                     </div>
                     <!-- Responsive Settings Options -->
                     <div class="pt-4 pb-1 border-t border-gray-200">

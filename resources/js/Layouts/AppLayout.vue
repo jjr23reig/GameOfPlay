@@ -141,7 +141,7 @@
                                             Profile
                                         </jet-dropdown-link>
 
-                                        <jet-dropdown-link :href="route('library')">
+                                        <jet-dropdown-link :href="route('library')" v-if="$page.props.user.role_id == 1">
                                             Library
                                         </jet-dropdown-link>
 
@@ -188,6 +188,13 @@
                         <jet-responsive-nav-link :href="route('support')" :active="route().current('support')">
                             Support
                         </jet-responsive-nav-link>
+                        
+                    </div>
+                    <div class="pt-2 pb-3 space-y-1" v-if="$page.props.user.role_id == 2">
+
+                        <jet-responsive-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
+                            User list
+                        </jet-responsive-nav-link>
                     </div>
 
                     <!-- Responsive Settings Options -->
@@ -207,7 +214,7 @@
                             <jet-responsive-nav-link :href="route('profile.show')" :active="route().current('profile.show')">
                                 Profile
                             </jet-responsive-nav-link>
-                            <jet-responsive-nav-link :href="route('library')" :active="route().current('library')">
+                            <jet-responsive-nav-link :href="route('library')" :active="route().current('library')" v-if="$page.props.user.role_id == 1">
                                 Library
                             </jet-responsive-nav-link>
                             <jet-responsive-nav-link :href="route('cart', $page.props.user.id)" :active="route().current('cart')" v-if="$page.props.user.role_id == 1">
