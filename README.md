@@ -59,7 +59,11 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 ## License
 
-[Documento del Tfg.docx](https://github.com/jjr23reig/GameOfPlay/files/6666217/Documento.del.Tfg.docx)
+
 
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Documentacion de la aplicación
+[Documento del Tfg.docx](https://github.com/jjr23reig/GameOfPlay/files/6666217/Documento.del.Tfg.docx)
+[Documento del Tfg.pdf](https://github.com/jjr23reig/GameOfPlay/files/6666238/Documento.del.Tfg.pdf)
