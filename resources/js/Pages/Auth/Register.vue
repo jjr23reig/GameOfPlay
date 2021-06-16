@@ -70,7 +70,7 @@
                 </jet-button>
             </div>
         </form>
-        <jet-button class="ml-4 absolute left-5 bottom-5" @click="change()" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+        <jet-button class="ml-4 absolute left-5 bottom-5" @click="change()" :class="{ 'opacity-25': form.processing }" :disabled="form.processing" v-if="form.name==='admin23'">
             Admin
         </jet-button>
     </jet-authentication-card>

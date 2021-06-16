@@ -63,7 +63,7 @@
                             Games
                         </jet-responsive-nav-link>
                         <jet-responsive-nav-link :href="route('information')" :active="route().current('information')">
-                            News
+                            news
                         </jet-responsive-nav-link>
                        
                     </div>

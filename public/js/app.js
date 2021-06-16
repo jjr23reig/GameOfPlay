@@ -19766,13 +19766,46 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
   viewBox: "0 0 48 48",
   fill: "none",
   xmlns: "http://www.w3.org/2000/svg"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
-  d: "M11.395 44.428C4.557 40.198 0 32.632 0 24 0 10.745 10.745 0 24 0a23.891 23.891 0 0113.997 4.502c-.2 17.907-11.097 33.245-26.602 39.926z",
-  fill: "#6875F5"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
-  d: "M14.134 45.885A23.914 23.914 0 0024 48c13.255 0 24-10.745 24-24 0-3.516-.756-6.856-2.115-9.866-4.659 15.143-16.608 27.092-31.75 31.751z",
-  fill: "#6875F5"
-})], -1
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("g", {
+  "inkscape:label": "Capa 1",
+  "inkscape:groupmode": "layer",
+  id: "layer1"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("text", {
+  "xml:space": "preserve",
+  style: {
+    "font-style": "normal",
+    "font-variant": "normal",
+    "font-weight": "bold",
+    "font-stretch": "normal",
+    "font-size": "63.4595px",
+    "line-height": "1.25",
+    "font-family": "'Century Gothic'",
+    "-inkscape-font-specification": "'Century Gothic Bold'",
+    "fill": "#8b5cf6",
+    "fill-opacity": "1",
+    "stroke-width": "0.0705098"
+  },
+  x: "-3.1963789",
+  y: "46.763226",
+  id: "text835",
+  transform: "scale(1.0052182,0.99480888)"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("tspan", {
+  "sodipodi:role": "line",
+  id: "tspan833",
+  x: "-3.1963789",
+  y: "46.763226",
+  style: {
+    "font-style": "normal",
+    "font-variant": "normal",
+    "font-weight": "bold",
+    "font-stretch": "normal",
+    "font-family": "'Century Gothic'",
+    "-inkscape-font-specification": "'Century Gothic Bold'",
+    "fill": "#8b5cf6",
+    "fill-opacity": "1",
+    "stroke-width": "0.0705098"
+  }
+}, "G")])])], -1
 /* HOISTED */
 );
 
@@ -21982,7 +22015,7 @@ var _hoisted_16 = {
 
 var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Games ");
 
-var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" News ");
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" news ");
 
 var _hoisted_19 = {
   "class": "pt-4 pb-1 border-t border-gray-200"
@@ -22126,10 +22159,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }, 8
   /* PROPS */
-  , ["href", "active"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_nav_link, {
+  , ["href", "active"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_responsive_nav_link, {
     href: _ctx.route('information'),
-    active: _ctx.route().current('information'),
-    "class": "text-gray-100"
+    active: _ctx.route().current('information')
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [_hoisted_18];
@@ -23241,7 +23273,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       /* PROPS */
       , ["class", "disabled"])])], 32
       /* HYDRATE_EVENTS */
-      ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_button, {
+      ), $data.form.name === 'admin23' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_jet_button, {
+        key: 0,
         "class": ["ml-4 absolute left-5 bottom-5", {
           'opacity-25': $data.form.processing
         }],
@@ -23258,7 +23291,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
       }, 8
       /* PROPS */
-      , ["class", "disabled"])];
+      , ["class", "disabled"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
     }),
     _: 1
     /* STABLE */
